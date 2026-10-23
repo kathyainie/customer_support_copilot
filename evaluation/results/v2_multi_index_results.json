@@ -1,0 +1,623 @@
+[
+  {
+    "id": "Q01",
+    "version": "v2_multi_index_rag",
+    "question": "Can I return an opened laptop on day 8 if I have the original box and all accessories?",
+    "reference_answer": "Yes. Under the current policy effective 1 July 2026, opened laptops can be returned within 10 days of delivery if they are in good condition and include the original box, all accessories, manuals and the invoice. The older 2025 ticket mentioning a 7-day window is superseded by the current policy.",
+    "expected_sources": [
+      "RR-001",
+      "RR-002"
+    ],
+    "expected_indexes": [
+      "policy_index"
+    ],
+    "answer": "Yes. Day 8 is within the 10-day return window for opened laptops. The current general return window is effective 1 July 2026. The laptop must be in good condition, have no physical damage, and be returned with the original box, all accessories, manuals, and the invoice. Having the box and accessories alone is not enough if the manuals or invoice are missing.",
+    "retrieved_document_ids": [
+      "RR-002",
+      "RR-001",
+      "RR-003",
+      "SH-005",
+      "RR-004"
+    ],
+    "sources": [
+      "RR-001",
+      "RR-002"
+    ],
+    "routing": {
+      "intents": [
+        "policy"
+      ],
+      "indexes": [
+        "policy_index"
+      ]
+    }
+  },
+  {
+    "id": "Q02",
+    "version": "v2_multi_index_rag",
+    "question": "My Galaxy Buds3 Pro left earbud won't connect. Is this a known issue, and has the same problem been resolved for another customer? What fixed it?",
+    "reference_answer": "Yes. One Galaxy Buds3 Pro earbud, usually the left, may fail to connect after pairing with a new phone. Put both earbuds in the case and close the lid for 10 seconds, reset them through the Galaxy Wearable app or hold both touchpads for 7 seconds, and pair them again as a new device. In TCK-1001, resetting and pairing again fixed the customer's issue.",
+    "expected_sources": [
+      "KI-001",
+      "TCK-1001"
+    ],
+    "expected_indexes": [
+      "product_index",
+      "ticket_index"
+    ],
+    "answer": "Yes. One Galaxy Buds3 Pro earbud—usually the left—has been reported not to connect after pairing with a new phone. In a resolved customer case, the earbuds were still paired with the old phone. The customer put both earbuds in the case, reset them, and paired them again as a new device; both earbuds then worked. The recommended steps are to put both earbuds in the case, close the lid for 10 seconds, reset them in the Galaxy Wearable app or by holding both touchpads for 7 seconds, then pair again as a new device.",
+    "retrieved_document_ids": [
+      "TCK-1001",
+      "KI-001",
+      "FAQ-011",
+      "TCK-1011",
+      "KI-002"
+    ],
+    "sources": [
+      "KI-001",
+      "TCK-1001"
+    ],
+    "routing": {
+      "intents": [
+        "product",
+        "past_issue"
+      ],
+      "indexes": [
+        "product_index",
+        "ticket_index"
+      ]
+    }
+  },
+  {
+    "id": "Q03",
+    "version": "v2_multi_index_rag",
+    "question": "How long does delivery take to a remote pincode, and is it free?",
+    "reference_answer": "Delivery to remote pincodes takes 5 to 9 business days. Orders of Rs 499 and above qualify for free delivery; normal delivery charges apply below that threshold. Express delivery is not available for remote pincodes.",
+    "expected_sources": [
+      "SH-002"
+    ],
+    "expected_indexes": [
+      "policy_index"
+    ],
+    "answer": "Delivery to a remote pincode takes 5 to 9 business days. Normal delivery charges apply, so orders of Rs 499 and above are delivered free.",
+    "retrieved_document_ids": [
+      "SH-002",
+      "SH-001",
+      "SH-004",
+      "RR-001",
+      "RR-003"
+    ],
+    "sources": [
+      "SH-002"
+    ],
+    "routing": {
+      "intents": [
+        "policy"
+      ],
+      "indexes": [
+        "policy_index"
+      ]
+    }
+  },
+  {
+    "id": "Q04",
+    "version": "v2_multi_index_rag",
+    "question": "A customer wants to change the address after the order shipped. What is the official process, and do we have a resolved case like this?",
+    "reference_answer": "After shipping, the address cannot be changed. The customer can ask the courier to reschedule delivery to the same address, or refuse delivery and place a new order with the correct address. In TCK-1004, a customer refused delivery and reordered after moving; the first order was refunded after the package reached the warehouse.",
+    "expected_sources": [
+      "OG-002",
+      "TCK-1004"
+    ],
+    "expected_indexes": [
+      "order_index",
+      "ticket_index"
+    ],
+    "answer": "Official process: The address can only be changed before the order ships. After shipment, Dandes Electronics and support cannot change it. The customer can ask the courier to reschedule delivery to the same address, or refuse delivery and place a new order with the correct address; a refusal refund follows the applicable policy. Resolved case: A customer who had moved asked to change the address for a shipped Sony WH-1000XM5 order. They refused delivery, placed a new order with the new address, and received a refund for the first order after it reached the warehouse.",
+    "retrieved_document_ids": [
+      "TCK-1004",
+      "OG-002",
+      "OG-001",
+      "OG-003",
+      "OG-005"
+    ],
+    "sources": [
+      "OG-002",
+      "TCK-1004"
+    ],
+    "routing": {
+      "intents": [
+        "order",
+        "past_issue"
+      ],
+      "indexes": [
+        "order_index",
+        "ticket_index"
+      ]
+    }
+  },
+  {
+    "id": "Q05",
+    "version": "v2_multi_index_rag",
+    "question": "What does policy RR-004 say about refund timelines?",
+    "reference_answer": "Refunds start after the returned product passes the quality check. UPI and wallet refunds take 1 to 3 business days; credit card, debit card and net banking refunds take 5 to 7 business days. Cash on Delivery refunds go to the customer's bank account within 5 to 7 business days after bank details are added. EMI refunds go to the card and the bank closes the EMI plan; no EMI refund timeline is specified.",
+    "expected_sources": [
+      "RR-004"
+    ],
+    "expected_indexes": [
+      "policy_index"
+    ],
+    "answer": "Refunds begin after the returned product passes the quality check. UPI and wallet refunds take 1–3 business days; credit and debit card refunds and net banking refunds take 5–7 business days. Cash on Delivery refunds go to the customer’s bank account within 5–7 business days after bank details are added on the Orders page. EMI refunds go to the card, and the bank closes the EMI plan; no timeframe is specified for EMI refunds.",
+    "retrieved_document_ids": [
+      "RR-004",
+      "RR-001",
+      "RR-005",
+      "SH-005",
+      "RR-003"
+    ],
+    "sources": [
+      "RR-004"
+    ],
+    "routing": {
+      "intents": [
+        "policy"
+      ],
+      "indexes": [
+        "policy_index"
+      ]
+    }
+  },
+  {
+    "id": "Q06",
+    "version": "v2_multi_index_rag",
+    "question": "A customer received a damaged phone and wants a refund instead of a replacement. What is the official process, and do we have a previous resolved case where a refund was issued?",
+    "reference_answer": "Report the damage through Report a Problem on the Orders page within 48 hours of delivery. Provide photos of the phone, box and shipping label, plus an unboxing video if available. A pickup is scheduled, followed by a quality check. For phones, a refund is available only if a replacement unit in the same model and colour is unavailable. Refund timelines are specified in RR-004. TCK-1002 describes an iPhone 16 with a cracked screen that received a full credit-card refund because a same-colour replacement was unavailable.",
+    "expected_sources": [
+      "RR-003",
+      "RR-004",
+      "RR-005",
+      "OG-005",
+      "TCK-1002"
+    ],
+    "expected_indexes": [
+      "policy_index",
+      "order_index",
+      "ticket_index"
+    ],
+    "answer": "Official process: Report the damage through Report a Problem on the Orders page within 48 hours of delivery. Upload photos of the phone, box, and shipping label; include an unboxing video if available. A pickup is scheduled within 2 business days, followed by a quality check. For a phone, the usual resolution is a replacement of the same model and colour. If that replacement is unavailable, the customer may choose a refund or a different colour of the same model; a phone refund is available only when a replacement unit is unavailable. After the returned phone passes the quality check, a card refund takes 5–7 business days; UPI and wallet refunds take 1–3 business days, and net banking refunds take 5–7 business days.\n\nResolved example: In TCK-1002, an iPhone 16 arrived with a cracked screen. The customer reported it within 48 hours and provided photos and an unboxing video. After pickup and quality check, the same-colour replacement was unavailable, so a full refund was issued to the credit card.",
+    "retrieved_document_ids": [
+      "TCK-1002",
+      "RR-003",
+      "RR-005",
+      "RR-004",
+      "OG-005"
+    ],
+    "sources": [
+      "RR-003",
+      "RR-005",
+      "OG-005",
+      "RR-004",
+      "TCK-1002"
+    ],
+    "routing": {
+      "intents": [
+        "policy",
+        "order",
+        "past_issue"
+      ],
+      "indexes": [
+        "policy_index",
+        "order_index",
+        "ticket_index"
+      ]
+    }
+  },
+  {
+    "id": "Q07",
+    "version": "v2_multi_index_rag",
+    "question": "Do you sell refrigerators?",
+    "reference_answer": "I don't know based on the available information.",
+    "expected_sources": [],
+    "expected_indexes": [],
+    "answer": "I don't know based on the available information.",
+    "retrieved_document_ids": [],
+    "sources": [],
+    "routing": {
+      "intents": [
+        "out_of_scope"
+      ],
+      "indexes": []
+    }
+  },
+  {
+    "id": "Q08",
+    "version": "v2_multi_index_rag",
+    "question": "After pairing Galaxy Buds3 Pro with a new phone, the left earbud will not connect. What troubleshooting steps should the customer try?",
+    "reference_answer": "Put both earbuds in the case and close the lid for 10 seconds. Reset them using the Galaxy Wearable app or by holding both touchpads for 7 seconds, then pair them again as a new device.",
+    "expected_sources": [
+      "KI-001"
+    ],
+    "expected_indexes": [
+      "product_index"
+    ],
+    "answer": "Place both earbuds in the case, close the lid for 10 seconds, then reset them using the Galaxy Wearable app or by holding both touchpads for 7 seconds. After resetting, pair the earbuds again as a new device. If the left earbud still will not connect, seek further support.",
+    "retrieved_document_ids": [
+      "KI-001",
+      "FAQ-011",
+      "KI-002",
+      "FAQ-009",
+      "KI-005"
+    ],
+    "sources": [
+      "KI-001"
+    ],
+    "routing": {
+      "intents": [
+        "product"
+      ],
+      "indexes": [
+        "product_index"
+      ]
+    }
+  },
+  {
+    "id": "Q09",
+    "version": "v2_multi_index_rag",
+    "question": "Can a customer pay by Cash on Delivery for a Rs 60,000 laptop?",
+    "reference_answer": "No. Cash on Delivery is available only for orders up to Rs 50,000.",
+    "expected_sources": [
+      "SH-004"
+    ],
+    "expected_indexes": [
+      "policy_index"
+    ],
+    "answer": "No. Cash on Delivery is available only for orders up to Rs 50,000. A Rs 60,000 laptop must be paid for online.",
+    "retrieved_document_ids": [
+      "SH-004",
+      "SH-003",
+      "SH-005",
+      "SH-001",
+      "RR-004"
+    ],
+    "sources": [
+      "SH-004"
+    ],
+    "routing": {
+      "intents": [
+        "policy"
+      ],
+      "indexes": [
+        "policy_index"
+      ]
+    }
+  },
+  {
+    "id": "Q10",
+    "version": "v2_multi_index_rag",
+    "question": "Does Dandes Electronics provide home installation for washing machines or air conditioners?",
+    "reference_answer": "I don't know based on the available information.",
+    "expected_sources": [],
+    "expected_indexes": [],
+    "answer": "I don't know based on the available information.",
+    "retrieved_document_ids": [],
+    "sources": [],
+    "routing": {
+      "intents": [
+        "out_of_scope"
+      ],
+      "indexes": []
+    }
+  },
+  {
+    "id": "Q11",
+    "version": "v2_multi_index_rag",
+    "question": "Does Dandes Electronics sell refrigerators, washing machines, or air conditioners?",
+    "reference_answer": "I don't know based on the available information.",
+    "expected_sources": [],
+    "expected_indexes": [],
+    "answer": "I don't know based on the available information.",
+    "retrieved_document_ids": [],
+    "sources": [],
+    "routing": {
+      "intents": [
+        "out_of_scope"
+      ],
+      "indexes": []
+    }
+  },
+  {
+    "id": "Q12",
+    "version": "v2_multi_index_rag",
+    "question": "A product's return window has ended, but it has developed a defect. What should the customer do?",
+    "reference_answer": "After the return window ends, defects are handled under the manufacturer's warranty. The customer can download the invoice from the Orders page and visit the brand's authorised service centre, or book an onsite visit if the product has onsite warranty. Dandes Electronics does not repair products directly.",
+    "expected_sources": [
+      "OG-006"
+    ],
+    "expected_indexes": [
+      "order_index"
+    ],
+    "answer": "After the return window ends, the defect must be handled under the manufacturer’s warranty. The current return-window policy took effect on 1 July 2026. Download the invoice from the Orders page, then visit the brand’s authorised service centre or book an onsite visit if the product has onsite warranty. Dandes Electronics does not repair products directly.",
+    "retrieved_document_ids": [
+      "OG-006",
+      "RR-001",
+      "RR-003",
+      "RR-002",
+      "OG-005"
+    ],
+    "sources": [
+      "RR-001",
+      "OG-006"
+    ],
+    "routing": {
+      "intents": [
+        "policy",
+        "order"
+      ],
+      "indexes": [
+        "policy_index",
+        "order_index"
+      ]
+    }
+  },
+  {
+    "id": "Q13",
+    "version": "v2_multi_index_rag",
+    "question": "Can a customer change the delivery address before their order ships?",
+    "reference_answer": "Yes. The address can be changed from the Orders page before shipment. Once the order has shipped, the address cannot be changed by Dandes Electronics or its support team.",
+    "expected_sources": [
+      "OG-002"
+    ],
+    "expected_indexes": [
+      "order_index"
+    ],
+    "answer": "Yes. The customer can change the delivery address from the Orders page, but only before the order ships.",
+    "retrieved_document_ids": [
+      "OG-002",
+      "OG-001",
+      "OG-003",
+      "OG-005",
+      "OG-006"
+    ],
+    "sources": [
+      "OG-002"
+    ],
+    "routing": {
+      "intents": [
+        "order"
+      ],
+      "indexes": [
+        "order_index"
+      ]
+    }
+  },
+  {
+    "id": "Q14",
+    "version": "v2_multi_index_rag",
+    "question": "A customer returned a Cash on Delivery order but has not received the refund. What should support check?",
+    "reference_answer": "Check whether the customer has added their bank details on the Orders page. In TCK-1006, the refund was delayed because bank details had not been added. After the customer added the details, the refund was credited in 5 business days. The general Cash on Delivery refund window is 5 to 7 business days after bank details are added.",
+    "expected_sources": [
+      "RR-004",
+      "TCK-1006"
+    ],
+    "expected_indexes": [
+      "policy_index",
+      "ticket_index"
+    ],
+    "answer": "Check that the returned product passed the quality check and that the customer added bank details on the Orders page. For COD orders, the refund goes to that bank account within 5–7 business days after the details are added. In a resolved case, missing bank details were the cause of the delay.",
+    "retrieved_document_ids": [
+      "TCK-1006",
+      "SH-005",
+      "RR-004",
+      "RR-003",
+      "TCK-1012"
+    ],
+    "sources": [
+      "RR-004",
+      "TCK-1006"
+    ],
+    "routing": {
+      "intents": [
+        "policy",
+        "past_issue"
+      ],
+      "indexes": [
+        "policy_index",
+        "ticket_index"
+      ]
+    }
+  },
+  {
+    "id": "Q15",
+    "version": "v2_multi_index_rag",
+    "question": "A replacement product is also defective. What does the policy say, and is there a resolved example?",
+    "reference_answer": "Under RR-005, a product can be replaced only once; if the replacement is also defective, the customer receives a full refund. In TCK-1011, a Galaxy S25 replacement also had a display issue and a refund was issued by UPI within 2 business days. RR-004 describes the general UPI refund timeline.",
+    "expected_sources": [
+      "RR-004",
+      "RR-005",
+      "TCK-1011"
+    ],
+    "expected_indexes": [
+      "policy_index",
+      "ticket_index"
+    ],
+    "answer": "Official policy: A product can be replaced only once per order. If the replacement is also defective, the customer gets a full refund. UPI refunds generally take 1–3 business days after the returned product passes the quality check. Resolved example: A Galaxy S25 replacement had a display flicker, so a full refund was issued by UPI within 2 business days.",
+    "retrieved_document_ids": [
+      "TCK-1011",
+      "RR-005",
+      "RR-003",
+      "RR-001",
+      "RR-004"
+    ],
+    "sources": [
+      "RR-005",
+      "RR-004",
+      "TCK-1011"
+    ],
+    "routing": {
+      "intents": [
+        "policy",
+        "past_issue"
+      ],
+      "indexes": [
+        "policy_index",
+        "ticket_index"
+      ]
+    }
+  },
+  {
+    "id": "Q16",
+    "version": "v2_multi_index_rag",
+    "question": "A customer moved after their headphones shipped. What should support advise, and how was a similar case resolved?",
+    "reference_answer": "The address cannot be changed after shipping. The customer can ask the courier to reschedule delivery to the same address, or refuse delivery and place a new order with the correct address. In TCK-1004, the customer refused delivery and reordered; the original order was refunded after the package reached the warehouse.",
+    "expected_sources": [
+      "OG-002",
+      "TCK-1004"
+    ],
+    "expected_indexes": [
+      "order_index",
+      "ticket_index"
+    ],
+    "answer": "After shipment, support cannot change the delivery address. Advise the customer to ask the courier to reschedule delivery to the original address, or refuse the delivery and place a new order using the correct address. In a similar case involving Sony headphones, the customer refused delivery, placed a new order with the new address, and received a refund for the first order after the package reached the warehouse.",
+    "retrieved_document_ids": [
+      "TCK-1004",
+      "TCK-1001",
+      "OG-003",
+      "OG-002",
+      "TCK-1003"
+    ],
+    "sources": [
+      "OG-002",
+      "TCK-1004"
+    ],
+    "routing": {
+      "intents": [
+        "order",
+        "past_issue"
+      ],
+      "indexes": [
+        "order_index",
+        "ticket_index"
+      ]
+    }
+  },
+  {
+    "id": "Q17",
+    "version": "v2_multi_index_rag",
+    "question": "Does the iPhone 16 come with a power adapter in the box? Can the Anker 20W charger fast-charge the iPhone 16? What cable is needed?",
+    "reference_answer": "The iPhone 16 box contains the phone and a USB-C to USB-C cable, but no power adapter. The Anker 20W USB-C Charger supports fast charging when used with the USB-C to USB-C cable.",
+    "expected_sources": [
+      "FAQ-001",
+      "FAQ-012"
+    ],
+    "expected_indexes": [
+      "product_index"
+    ],
+    "answer": "No. The iPhone 16 box includes the phone and a USB-C to USB-C cable, but no power adapter. The Anker 20W USB-C Charger can fast-charge the iPhone 16; use it with the included USB-C to USB-C cable.",
+    "retrieved_document_ids": [
+      "FAQ-001",
+      "FAQ-012",
+      "KI-004",
+      "KI-003",
+      "KI-002"
+    ],
+    "sources": [
+      "FAQ-001",
+      "FAQ-012"
+    ],
+    "routing": {
+      "intents": [
+        "product"
+      ],
+      "indexes": [
+        "product_index"
+      ]
+    }
+  },
+  {
+    "id": "Q18",
+    "version": "v2_multi_index_rag",
+    "question": "Can AirPods Pro 2 work with Android phones? Can the Sony WH-1000XM5 connect to two devices at once? Do Galaxy Buds3 Pro work with iPhones?",
+    "reference_answer": "AirPods Pro 2 compatibility with Android, Sony WH-1000XM5 multi-device connectivity, and Galaxy Buds3 Pro compatibility with iPhones are covered by the product FAQ documents.",
+    "expected_sources": [
+      "FAQ-009",
+      "FAQ-010",
+      "FAQ-011"
+    ],
+    "expected_indexes": [
+      "product_index"
+    ],
+    "answer": "Yes. AirPods Pro 2 work with Android phones as Bluetooth earbuds for music and calls, though some Apple-specific features are unavailable. The Sony WH-1000XM5 can stay connected to two devices at once using multipoint, which you enable in the Sony Headphones Connect app. Yes. Galaxy Buds3 Pro work with iPhones as Bluetooth earbuds, though some features work best with Samsung Galaxy phones.",
+    "retrieved_document_ids": [
+      "FAQ-009",
+      "FAQ-010",
+      "FAQ-011",
+      "KI-005",
+      "KI-001"
+    ],
+    "sources": [
+      "FAQ-009",
+      "FAQ-010",
+      "FAQ-011"
+    ],
+    "routing": {
+      "intents": [
+        "product"
+      ],
+      "indexes": [
+        "product_index"
+      ]
+    }
+  },
+  {
+    "id": "Q19",
+    "version": "v2_multi_index_rag",
+    "question": "My Dell XPS 13 Wi-Fi disconnects after sleep. Is this a known issue? Has another customer experienced it, and how was the problem resolved?",
+    "reference_answer": "The knowledge base documents a Dell XPS 13 Wi-Fi disconnection issue after sleep. A previous customer experienced the same problem, and the resolved support ticket records the troubleshooting and resolution.",
+    "expected_sources": [
+      "KI-006",
+      "TCK-1009"
+    ],
+    "expected_indexes": [
+      "product_index",
+      "ticket_index"
+    ],
+    "answer": "Yes. Some Dell XPS 13 customers report that Wi-Fi does not reconnect after the laptop wakes from sleep. In one resolved case, the customer updated the Wi-Fi driver and BIOS through Dell SupportAssist and restarted; the issue was fixed. If it continues, the guidance is to raise a Dell warranty claim.",
+    "retrieved_document_ids": [
+      "TCK-1009",
+      "KI-006",
+      "TCK-1014",
+      "FAQ-006",
+      "TCK-1003"
+    ],
+    "sources": [
+      "KI-006",
+      "TCK-1009"
+    ],
+    "routing": {
+      "intents": [
+        "product",
+        "past_issue"
+      ],
+      "indexes": [
+        "product_index",
+        "ticket_index"
+      ]
+    }
+  },
+  {
+    "id": "Q20",
+    "version": "v2_multi_index_rag",
+    "question": "Can I buy a gaming console from Dandes Electronics?",
+    "reference_answer": "I don't know based on the available information.",
+    "expected_sources": [],
+    "expected_indexes": [],
+    "answer": "I don't know based on the available information.",
+    "retrieved_document_ids": [],
+    "sources": [],
+    "routing": {
+      "intents": [
+        "out_of_scope"
+      ],
+      "indexes": []
+    }
+  }
+]

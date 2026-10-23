@@ -1,0 +1,56 @@
+CUSTOMER SUPPORT COPILOT — V2 MULTI-INDEX RAG
+==============================================================================
+
+Question: Can I return an opened laptop on day 8 if I have the original box and all accessories?
+Routing: intents=[policy] -> indexes=[policy_index]
+Answer: Yes. Day 8 is within the 10-day return window. For an opened laptop, it must be in good condition with no physical damage, and you must include the original box, all accessories, manuals, and the invoice. The general return-window policy is effective from 1 July 2026.
+Sources: RR-001, RR-002
+
+==============================================================================
+
+Question: My Galaxy Buds3 Pro left earbud won't connect. Is this a known issue, and has the same problem been resolved for another customer? What fixed it?
+Routing: intents=[product, past_issue] -> indexes=[product_index, ticket_index]
+Answer: Yes. This is a reported issue, particularly after pairing the earbuds with a new phone. In a resolved customer case, the earbuds were still paired with the old phone; resetting them and pairing again as a new device fixed the problem. To try this, put both earbuds in the case, close the lid for 10 seconds, then reset them in the Galaxy Wearable app or hold both touchpads for 7 seconds, and pair them again as a new device.
+Sources: KI-001, TCK-1001
+
+==============================================================================
+
+Question: How long does delivery take to a remote pincode, and is it free?
+Routing: intents=[policy] -> indexes=[policy_index]
+Answer: Delivery to a remote pincode takes 5 to 9 business days. Delivery is free for orders of Rs 499 or more; normal delivery charges apply to orders below Rs 499. Express delivery is not available for remote pincodes.
+Sources: SH-002
+
+==============================================================================
+
+Question: A customer wants to change the address after the order shipped. What is the official process, and do we have a resolved case like this?
+Routing: intents=[order, past_issue] -> indexes=[order_index, ticket_index]
+Answer: Official process: Once an order has shipped, the address cannot be changed by Dandes Electronics or the support team. The customer can ask the courier to reschedule delivery to the same address, or refuse the delivery and place a new order with the correct address. Refunds for refused deliveries follow the applicable refusal-refund policy.
+
+Resolved case: In a similar case, a customer’s Sony WH-1000XM5 had already shipped. The customer refused delivery, placed a new order with the updated address, and received a refund for the first order after it reached the warehouse.
+Sources: OG-002, TCK-1004
+
+==============================================================================
+
+Question: What does policy RR-004 say?
+Routing: intents=[policy] -> indexes=[policy_index]
+Answer: RR-004 says refunds begin after the returned product passes the quality check. UPI and wallet refunds take 1–3 business days; credit card, debit card, and net banking refunds take 5–7 business days. Cash on Delivery refunds go to the customer’s bank account within 5–7 business days after bank details are added on the Orders page. EMI refunds are sent to the card, and the bank closes the EMI plan.
+Sources: RR-004
+
+==============================================================================
+
+Question: A customer received a damaged phone and wants a refund instead of a replacement. What is the official process, and do we have a previous resolved case where a refund was issued?
+Routing: intents=[policy, order, past_issue] -> indexes=[policy_index, order_index, ticket_index]
+Answer: Official process: Report the damage through Orders > Report a Problem within 48 hours of delivery. Upload photos of the phone, box, and shipping label; include an unboxing video if available. A pickup is scheduled within 2 business days, followed by a quality check. For phones, the usual outcome is a replacement; a refund is available if a replacement unit is not available. The replacement rules specify the same model and colour; if the same model is out of stock, the customer may choose a refund or a different colour of that model. Any refund starts after the returned phone passes the quality check. It takes 1–3 business days for UPI or wallet, and 5–7 business days for credit/debit card or net banking; COD refunds take 5–7 business days after bank details are added on the Orders page.
+
+Resolved case: Yes. In a previous case, an iPhone 16 arrived with a cracked screen. The customer reported it within 48 hours and supplied photos and an unboxing video; pickup and quality check confirmed the damage. Because a replacement in the same colour was unavailable, a full refund was issued to the credit card.
+Sources: RR-003, RR-005, OG-005, RR-004, TCK-1002
+
+==============================================================================
+
+Question: Do you sell refrigerators?
+Routing: intents=[out_of_scope] -> indexes=[none]
+Answer: I don't know based on the available information.
+Sources: None
+
+==============================================================================
+

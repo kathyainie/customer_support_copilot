@@ -1,0 +1,7 @@
+.env
+.venv/
+chroma_db/
+__pycache__/
+.vscode/
+v2_multi_index/bm25_indexes/
+*.pyc
