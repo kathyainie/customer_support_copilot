@@ -102,10 +102,10 @@ Follow the prompt and select **1** for the seven assignment questions or **2** t
 
 The golden test set is `evaluation/golden_test_set.json` (20 questions, including in-scope, multi-source, and out-of-scope questions). Run these commands in order from the project root:
 
-python .\evaluation\1_run_versions.py
-python .\evaluation\2_retrieval_metrics.py
-python .\evaluation\3_generation_metrics.py
-python .\evaluation\4_comparison_table.py
+-python .\evaluation\1_run_versions.py
+-python .\evaluation\2_retrieval_metrics.py
+-python .\evaluation\3_generation_metrics.py
+-python .\evaluation\4_comparison_table.py
 
 The first command runs all 20 questions through all three RAG versions and saves their answers, retrieved document IDs, cited sources, and routing decisions. The generation-metrics script checkpoints completed questions and reuses those scores on a normal rerun; use `--force` only when you intentionally want to rescore.
 
